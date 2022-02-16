@@ -1,0 +1,58 @@
+﻿@page
+@model Flayer5.Pages.Bilete.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Bilet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Bilet.ID" />
+            <div class="form-group">
+                <label asp-for="Bilet.Nume" class="control-label"></label>
+                <input asp-for="Bilet.Nume" class="form-control" />
+                <span asp-validation-for="Bilet.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bilet.Prenume" class="control-label"></label>
+                <input asp-for="Bilet.Prenume" class="form-control" />
+                <span asp-validation-for="Bilet.Prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bilet.Destinatie" class="control-label"></label>
+                <input asp-for="Bilet.Destinatie" class="form-control" />
+                <span asp-validation-for="Bilet.Destinatie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bilet.Pret" class="control-label"></label>
+                <input asp-for="Bilet.Pret" class="form-control" />
+                <span asp-validation-for="Bilet.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <label asp-for="Bilet.Data" class="control-label"></label>
+                 <input asp-for="Bilet.Data" class="form-control" />
+                 <span asp-validation-for="Bilet.Data" class="textdanger"></span>
+            </div><label asp-for="Bilet.CompanieID" class="control-label">Nume Companie</label>
+ <select asp-for="Bilet.CompanieID" class="form-control" asp-items="ViewBag.PublisherID"> 
+</select>
+ <span asp-validation-for="Bilet.CompanieID" class="text-danger"></span>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
